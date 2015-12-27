@@ -17,7 +17,10 @@ AC_PROG_LIBTOOL
 # Checks for libraries.
 PKG_CHECK_MODULES(libimobiledevice, libimobiledevice-1.0 >= 1.2.0)
 PKG_CHECK_MODULES(libplist, libplist >= 0.15)
-PKG_CHECK_MODULES(libzip, libzip >= 0.8)
+#
+# FIXME
+# use zlib instead of libzip
+#PKG_CHECK_MODULES(libzip, libzip >= 0.8)
 
 # Checks for header files.
 AC_HEADER_STDC
