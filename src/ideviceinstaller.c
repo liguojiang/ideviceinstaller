@@ -49,7 +49,8 @@
 
 #include <plist/plist.h>
 
-#include <zip.h>
+//#include <zip.h>
+#include "zip.h"
 
 #ifndef ZIP_CODEC_ENCODE
 // this is required for old libzip...
