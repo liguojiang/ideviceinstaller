@@ -20,7 +20,7 @@ PKG_CHECK_MODULES(libplist, libplist >= 0.15)
 #
 # FIXME
 # use zlib instead of libzip
-#PKG_CHECK_MODULES(libzip, libzip >= 0.8)
+PKG_CHECK_MODULES(libzip, libzip >= 0.8)
 
 # Checks for header files.
 AC_HEADER_STDC
