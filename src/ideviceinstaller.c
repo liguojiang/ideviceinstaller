@@ -851,7 +851,7 @@ run_again:
 					struct zip_stat zs;
 					zip_stat_init(&zs);
 					if (zip_stat_index(zf, i, 0, &zs) != 0) {
-						fprintf(stderr, "ERROR: zip_stat_index %d failed!\n", i);
+						fprintf(stderr, "ERROR: zip_stat_index %ld failed!\n", i);
 						free(dstpath);
 						dstpath = NULL;
 						zip_fclose(zfile);
