@@ -1069,8 +1069,8 @@ run_again:
 		}
 		instproxy_client_options_free(client_opts);
 		free(pkgname);
-		wait_for_op_complete = 1;
-		notification_expected = 1;
+		wait_for_op_complete = 0;
+		notification_expected = 0;
 	} else if (cmd == CMD_UNINSTALL) {
 		printf("Uninstalling '%s'\n", appid);
 #ifdef HAVE_LIBIMOBILEDEVICE_1_1
