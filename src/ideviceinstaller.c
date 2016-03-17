@@ -851,7 +851,7 @@ run_again:
 					struct zip_stat zs;
 					zip_stat_init(&zs);
 					if (zip_stat_index(zf, i, 0, &zs) != 0) {
-						fprintf(stderr, "ERROR: zip_stat_index %" PRIu64 " failed!\n", i);
+						fprintf(stderr, "ERROR: zip_stat_index %d failed!\n", i);
 						free(dstpath);
 						dstpath = NULL;
 						zip_fclose(zfile);
@@ -862,7 +862,7 @@ run_again:
 					dstpath = NULL;
 
 					zip_uint64_t zfsize = 0;
-					while (zfsize < zs.size) {
+					while (zfsize < (zip_uint64_t)zs.size) {
 						zip_int64_t amount = zip_fread(zfile, buf, sizeof(buf));
 						if (amount == 0) {
 							break;
