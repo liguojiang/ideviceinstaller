@@ -870,7 +870,7 @@ run_again:
 
 						if (amount > 0) {
 							uint32_t written, total = 0;
-							while (total < amount) {
+							while (total < (uint32_t)amount) {
 								written = 0;
 								if (afc_file_write(afc, af, buf, amount, &written) !=
 									AFC_E_SUCCESS) {
@@ -879,8 +879,8 @@ run_again:
 								}
 								total += written;
 							}
-							if (total != amount) {
-								fprintf(stderr, "Error: wrote only %d of %" PRIi64 "\n", total, amount);
+							if (total != (uint32_t)amount) {
+								fprintf(stderr, "Error: wrote only %d of %d\n", total, amount);
 								afc_file_close(afc, af);
 								zip_fclose(zfile);
 								free(dstpath);
