@@ -1102,8 +1102,8 @@ run_again:
 		}
 		instproxy_client_options_free(client_opts);
 		free(pkgname);
-		wait_for_command_complete = 1;
-		notification_expected = 1;
+		wait_for_command_complete = 0;
+		notification_expected = 0;
 	} else if (cmd == CMD_UNINSTALL) {
 		printf("Uninstalling '%s'\n", appid);
 		instproxy_uninstall(ipc, appid, NULL, status_cb, NULL);
